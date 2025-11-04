@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-p-50: hsl(150, 66%, 96%);
+  --color-p-100: hsl(150, 64%, 91%);
+  --color-p-200: hsl(150, 60%, 80%);
+  --color-p-300: hsl(150, 55%, 67%);
+  --color-p-400: hsl(150, 51%, 52%);
+  --color-p-500: hsl(150, 69%, 42%);
+  --color-p-600: hsl(150, 74%, 30%);
+  --color-p-700: hsl(150, 75%, 24%);
+  --color-p-900: hsl(160, 65%, 17%);
+  --color-p-950: hsl(160, 73%, 9%);
+
+  --color-n-50: hsl(210, 14%, 98%);
+  --color-n-100: hsl(210, 20%, 93%);
+  --color-n-200: hsl(210, 22%, 85%);
+  --color-n-500: hsl(217, 20%, 58%);
+  --color-n-600: hsl(217, 18%, 54%);
+  --color-n-700: hsl(217, 17%, 40%);
+  --color-n-800: hsl(220, 14%, 12%);
+
+  /* Screens */
+  --breakpoint-sm: 30rem; /*480px*/
+  --breakpoint-md: 48rem; /*768px*/
+  --breakpoint-lg: 80rem; /*1280px*/
+  --breakpoint-xl: 87.5rem; /*1400px*/
+  --breakpoint-2xl: 96rem; /*1536px*/
+
+  /* font */
+  --font-family-lobster: "Lobster", serif;
+  --font-family-inter: "Inter", sans-serif;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  width: 100%;
+  overflow-x: clip;
+  max-width: 1536px;
+  @media (min-width: theme("screens.md")) {
+    padding-inline: 4.5rem;
+    padding-block: 3rem;
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-base font-family-inter overflow-x-clip;
+  }
+  p {
+    @apply text-sm leading-7 font-family-inter;
+  }
+  button {
+    @apply px-1 py-1 border cursor-pointer;
+  }
+  li {
+    @apply text-xs font-family-inter lg:text-base text-n-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-2 px-4 py-2 text-sm tracking-wider text-white bg-p-900 capitalize hover:bg-p-700 border-p-900 transition-colors duration-500 font-family-inter lg:px-9 xl:py-3;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      to right,
+      theme("colors.p.600"),
+      theme("colors.p.900")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* partner logos */
+  .sub_heading {
+    @apply text-xs font-medium uppercase font-family-inter text-p-900;
+  }
+  .main_heading {
+    @apply mt-2 text-2xl tracking-wide capitalize lg:text-3xl font-family-lobster;
+  }
+}
+
+@layer utilities {
+  .logo-ticker-image {
+    @apply w-auto h-6 lg:h-9;
+  }
+  .tabContainer {
+    @apply flex flex-col w-full gap-8 md:flex-row md:gap-16;
+
+    > div {
+      @apply w-full my-auto;
+    }
+    h3 {
+      @apply text-3xl font-bold capitalize lg:text-4xl;
+    }
+    h4 {
+      @apply mt-4 text-xl font-semibold text-p-900 md:mt-8;
+    }
+    p {
+      @apply max-w-xl mt-2;
+    }
+    button {
+      @apply flex-none mt-4 border-p-900 md:mt-8;
+    }
+  }
+  .productImg {
+    @apply w-full md:w-1/2 h-[250px] md:h-[700px] md:rounded-tr-[80px] md:rounded-br-[80px] object-center;
+  }
+  .tab-link {
+    @apply font-semibold hover:text-n-700;
+    span {
+      @apply hidden sm:inline;
+    }
+  }
+
+  .activeTab {
+    @apply text-p-900;
+  }
+}
