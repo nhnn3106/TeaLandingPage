@@ -68,6 +68,21 @@
   .btn {
     @apply flex items-center justify-center gap-2 px-4 py-2 text-sm tracking-wider text-white bg-p-900 capitalize hover:bg-p-700 border-p-900 transition-colors duration-500 font-family-inter lg:px-9 xl:py-3;
   }
+  .nav-link {
+    @apply text-base font-medium leading-none tracking-wide capitalize cursor-pointer text-n-700 hover:text-n-800;
+  }
+
+  .mobileNavLink {
+    @apply text-p-50 hover:text-p-200;
+  }
+
+  .dropdown-menu {
+    @apply absolute right-0 top-[70%] w-[300px] bg-p-900 backdrop-blur-[15px] rounded-[10px] overflow-hidden flex flex-col gap-4 justify-center items-center h-0 transition-all duration-200 ease-in-out;
+  }
+  .dropdown-menu.open {
+    height: 150px;
+    padding: 2rem 0;
+  }
 
   .text-gradient {
     background: linear-gradient(
