@@ -38,3 +38,43 @@ $(function () {
     animation: "slide",
   });
 });
+
+// Best Sellers
+$(function () {
+  $(".slider").slick({
+    autoplay: true,
+    dots: true,
+  });
+});
+
+// Stats
+$(function () {
+  // Kiểm tra xem thư viện đã load chưa để tránh lỗi
+  if (typeof window.counterUp === "undefined") {
+    console.error("Thư viện CounterUp2 chưa được load!");
+    return;
+  }
+
+  const counterUp = window.counterUp.default;
+
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      // intersectionRatio > 0 đảm bảo phần tử thực sự xuất hiện
+      if (entry.isIntersecting && !el.classList.contains("is-visible")) {
+        counterUp(el, {
+          duration: 1000,
+          delay: 16,
+        });
+        el.classList.add("is-visible");
+      }
+    });
+  };
+
+  // Threshold 0.5: Khi lướt thấy 50% số thì bắt đầu chạy
+  const IO = new IntersectionObserver(callback, { threshold: 0.5 });
+
+  // Chọn đúng class .counter trong span
+  const els = document.querySelectorAll(".counter");
+  els.forEach((node) => IO.observe(node));
+});

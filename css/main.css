@@ -47,6 +47,16 @@
 }
 
 @layer base {
+  :root {
+    --progress-number-bg: theme("colors.n.100");
+    --progress-number-color: theme("colors.n.500");
+    --progressbar-fill: linear-gradient(
+      to right,
+      theme("colors.p.500"),
+      theme("colors.p.900")
+    );
+  }
+
   html {
     @apply scroll-smooth;
   }
@@ -140,7 +150,7 @@
   }
   /* Features */
   .feature-card {
-    @apply h-[400px] w-[368px] flex flex-col justify-center items-center p-9 gap-9 [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0_25%)] text-semibold transition-all duration-500 bg-center bg-no-repeat bg-cover;
+    @apply h-[400px] w-[368px] flex flex-col justify-center items-center p-9 gap-9 [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0_25%)] font-semibold transition-all duration-500 bg-center bg-no-repeat bg-cover;
   }
   #features h3 {
     @apply relative z-0 text-xl font-semibold tracking-widest text-white uppercase transition-all duration-500 translate-y-16 group-hover:translate-y-4;
@@ -150,5 +160,45 @@
   }
   .feature-filter {
     @apply absolute inset-0 transition-all duration-500 opacity-50 bg-p-700 group-hover:opacity-80 -z-10 group-hover:bg-p-900;
+  }
+  /* Best sellers */
+  .best-product-info {
+    @apply mt-4 md:mt-9;
+    h3 {
+      @apply text-lg font-semibold text-p-900 md:text-2xl;
+    }
+    p {
+      @apply max-w-lg mt-4;
+    }
+  }
+  .best-product-left {
+    @apply p-4 lg:pl-0 lg:pl-8;
+  }
+  #best-sellers img {
+    @apply max-w-[600px] h-[250px] md:h-[70vh] max-h-[700px] md:rounded-tl-[80px] md:rounded-bl-[80px] object-cover;
+  }
+
+  .slick-dots {
+    bottom: -4rem !important;
+  }
+
+  .benefit-bars {
+    @apply mt-8;
+  }
+  .benefit-bars > div {
+    @apply flex flex-col gap-8 mb-8 lg:flex-row items-end;
+  }
+  .benefit-bars > div > div {
+    @apply w-full lg:flex-1;
+  }
+
+  /* Stats */
+  .stats-item {
+    h1 {
+      @apply text-6xl lg:text-8xl font-family-lobster text-center tracking-wider leading-none font-bold text-transparent bg-clip-text bg-[linear-gradient(24deg,rgba(255,255,255,1)_40%,rgba(121,220,100,1)_100%)];
+    }
+    h2 {
+      @apply mt-2 text-xs text-center lg:text-base text-white/50;
+    }
   }
 }
