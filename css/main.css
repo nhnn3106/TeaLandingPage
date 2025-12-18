@@ -234,4 +234,25 @@
       @apply mt-2 text-base;
     }
   }
+
+  /* Tất cả sản phẩm */
+  .product-details {
+    @apply absolute top-full group-hover:top-[calc(100%-120px)] h-[120px] p-4 bg-white/70 w-full backdrop-blur-xs flex-col items-center justify-center transition-all duration-500 text-center;
+    h3 {
+      @apply text-base tracking-wide capitalize text-n-800;
+    }
+    p {
+      @apply mt-2 text-xs tracking-wide text-n-700 line-clamp-2;
+    }
+  }
+  .portfolio-item img {
+    @apply transition-all duration-500 group-hover:scale-110;
+  }
+
+  #allProduct-filters a {
+    @apply text-xs font-medium text-n-500 hover:text-n-700 md:text-base capitalize;
+  }
+  .activeFilter {
+    @apply text-p-900! border-b-2 border-b-p-900;
+  }
 }

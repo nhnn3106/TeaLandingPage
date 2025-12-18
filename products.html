@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Station</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+
+    <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css" />
+    <link rel="stylesheet" href="./css/showHideNav.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/animated-counter-prograssbar.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="./dist/output.css" rel="stylesheet">
+
+
+
+    <!-- JQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="js/jquery.filterjitsu.js" defer></script>
+    <script src="js/jquery.hidescroll.js" defer></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/animated-counter-prograssbar.js" defer></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+    <script src="js/jquery.responsiveTabs.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="relative z-50 ">
+        <div class="flex items-center justify-center navbar">
+            <div class="max-w-[1536px] w-full px-4 py-4 md:py-10 md:px-[72px] flex items-center justify-between">
+                <!-- logo -->
+                <a href="./" class="flex items-center justify-center flex-none">
+                    <img src="/assets/logo.png" class="w-16 h-16">
+                    <p class="text-lg capitalize font-family-lobster text-p-900">Tea Station</p>
+                </a>
+                <!-- nav link -->
+                <nav class="items-center justify-center hidden w-fit gap-4 lg:flex lg:gap-8">
+                    <a href="./products.html" class="nav-link">
+                        Sản Phẩm
+                    </a>
+                    <a href="./#story" class="nav-link">
+                        Giới thiệu
+                    </a>
+                    <a href="./#contact" class="nav-link">
+                        Liên hệ
+                    </a>
+                </nav>
+                <!-- mobile nav -->
+                <div class="block cursor-pointer lg:hidden">
+                    <img src="./assets/Menu Icon.svg" alt="" class="size-[30px]" id="toggle_btn">
+                </div>
+                <!-- mobile menu -->
+                <div class="dropdown-menu lg:hidden">
+                    <a href="./products.html" class="nav-link mobileNavLink">
+                        Sản Phẩm
+                    </a>
+                    <a href="./#story" class="nav-link mobileNavLink">
+                        Giới Thiệu
+                    </a>
+                    <a href="./#contact" class="nav-link mobileNavLink">
+                        Liên hệ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tất cả sản phẩm -->
+    <section id="products">
+        <main class="container mt-20">
+            <!-- banner -->
+            <img src="./assets/banners/banner1.jpg" alt="" class="w-full h-[350px] object-cover shadow-xl">
+            <!-- tiêu đề -->
+            <div class="mt-4 md:mt-9">
+                <div>
+                    <h2 class="sub_heading">Shop with us</h2>
+                    <h1 class="main_heading">Tất cả sản phẩm</h1>
+                </div>
+                <p class="max-w-lg mt-2 text-xs text-n-500">
+                    Cho dù bạn là người đam mê trà lâu năm hay mới bước chân vào thế giới trà, chúng tôi ở đây để giúp bạn khám phá loại trà pha trộn yêu thích
+                    tiếp theo của mình. Khám phá bộ sưu tập của chúng tôi và
+                    trải nghiệm nghệ thuật pha trà trong từng ngụm.
+                </p>
+            </div>
+
+            <!-- filter tabs -->
+            <div id="allProducts-filters" class="flex gap-2 mt-4  md:mt-9">
+                <a id="f-all" href="?">Tất cả <span class="hidden sm:inline">sản phẩm</span></a>
+                <a id="f-blacktea" href="?filter-category=blacktea"><span class="hidden md:inline">Trà</span> đen</a>
+                <a id="f-whitetea" href="?filter-category=whitetea"><span class="hidden md:inline">Trà</span> trắng</a>
+                <a id="f-oolong" href="?filter-category=oolong"><span class="hidden md:inline">Trà</span> Ô long</a>
+                <a id="f-matcha" href="?filter-category=matcha"><span class="hidden md:inline">Trà</span> Matcha</a>
+            </div>
+
+            <section id="product-wrapper">
+                <div class="mt-9">
+                    <div id="product-items-container" class="grid grid-cols-3 gap-4 md:grid-cols-6 lg:grid-cols-12">
+                        <!-- <div class="relative col-span-3 overflow-hidden group hover:shadow-md">
+                            <div class="portfolio-item">
+                                <div>
+                                    <img src="./assets/products/matcha1.jpg" alt="product-img">
+                                    <div class="product-item-overlay">
+                                        <div class="product-details">
+                                            <h3>Tên sản phẩm</h3>
+                                            <p>Mô tả sản phẩm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+
+</body>
