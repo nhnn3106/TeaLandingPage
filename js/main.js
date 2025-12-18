@@ -23,6 +23,12 @@ $(function () {
     img.classList.add("logo-ticker-image");
     container.appendChild(img);
   });
+
+  const logoList = document.getElementById("partner-logo-list");
+  if (logoList) {
+    const originalContent = logoList.innerHTML;
+    logoList.innerHTML = originalContent + originalContent;
+  }
 });
 
 // products

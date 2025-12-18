@@ -31,6 +31,9 @@
   /* font */
   --font-family-lobster: "Lobster", serif;
   --font-family-inter: "Inter", sans-serif;
+
+  /* Animation */
+  --animate-scroll-left: scroll-left 30s linear infinite;
 }
 
 @utility container {
@@ -116,6 +119,23 @@
   .logo-ticker-image {
     @apply w-auto h-6 lg:h-9;
   }
+  /* Partner logos animation */
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
   .tabContainer {
     @apply flex flex-col w-full gap-8 md:flex-row md:gap-16;
 
@@ -199,6 +219,19 @@
     }
     h2 {
       @apply mt-2 text-xs text-center lg:text-base text-white/50;
+    }
+  }
+  /* Contact */
+  .contact-info {
+    @apply w-full;
+    > div {
+      @apply flex items-center gap-2 px-2 py-2 bg-p-600;
+    }
+    h1 {
+      @apply text-white capitalize;
+    }
+    p {
+      @apply mt-2 text-base;
     }
   }
 }
